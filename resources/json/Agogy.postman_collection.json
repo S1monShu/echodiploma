@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "76c43d86-22a5-4298-b698-25cd11b099ff",
+		"name": "Agogy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19661405"
+	},
+	"item": [
+		{
+			"name": "Авторизация",
+			"item": [
+				{
+					"name": "Вход",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@mail.ru\",\r\n    \"password\": \"useruser\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/agogy/signIn",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"agogy",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Выход",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@mail.ru\",\r\n    \"password\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/agogy/logOut",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"agogy",
+								"logOut"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Регистрация",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alex\",\r\n    \"email\": \"user@mail.ru\",\r\n    \"password\": \"useruser\",\r\n    \"password_confirmation\": \"useruser\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/agogy/signUp",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"agogy",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
