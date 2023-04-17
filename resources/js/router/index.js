@@ -12,7 +12,7 @@ import songsArtistPage from "@/pages/songsArtistPage.vue";
 const routes = [
     { path: '/home', component: homePage, alias: '/' },
     { path: '/favourites', component: favouritesPage },
-    { path: '/artist', component: songsArtistPage },
+    { path: '/artists/artist', component: songsArtistPage },
     { path: '/search', component: searchPage },
     /**         PROFILES        **/
     { path: '/profile_user', component: profileUserPage },

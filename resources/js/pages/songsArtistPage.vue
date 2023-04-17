@@ -11,13 +11,23 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-y-8">
+        <div class="flex flex-col gap-y-8 itc-slider w-[90%]"
+             data-slider="itc-slider"
+             data-loop="true"
+             data-autoplay="true"
+             data-interval="5000">
             <div class="flex flex-col justify-center items-center gap-y-3">
                 <h2 class="text-white text-3xl font-bold">Песни Artist Artist</h2>
                 <pagination-component />
             </div>
-            <div class="flex justify-start gap-x-8">
-                <card-component v-for="item in 5" />
+            <div class="itc-slider__wrapper">
+                <div class="itc-slider__items">
+                    <div class="itc-slider__item flex flex-col" v-for="item in 3">
+                        <div class="flex justify-start gap-x-8">
+                            <card-component v-for="item in 5" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -3,7 +3,7 @@
         <img class="rounded-2xl w-[90%] cursor-pointer" src="../../images/imageSong.svg" alt="image">
         <div>
             <p class="text-center text-white capitalize text-md break-words">song song song</p>
-            <router-link to="/artist">
+            <router-link to="/artists/artist">
                 <p class="text-center text-gray-500 uppercase text-sm font-medium break-words">artist artist</p>
             </router-link>
         </div>

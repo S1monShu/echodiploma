@@ -12,7 +12,6 @@ export default class ItcSlider {
   static #BTN_NEXT = 'btn_next';
   static #BTN_HIDE = 'btn_hide';
   static #TRANSITION_NONE = 'transition-none';
-
   static #instances = [];
 
   #config;
@@ -47,7 +46,7 @@ export default class ItcSlider {
     };
 
     this.#config = {
-      loop: true, autoplay: false, interval: 5000, refresh: true, swipe: true, ...config
+      loop: true, autoplay: true, interval: 5000, refresh: true, swipe: true, ...config
     };
 
     this.#init();

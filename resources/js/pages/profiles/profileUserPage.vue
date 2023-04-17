@@ -11,19 +11,29 @@
                 <p class="text-gray-500 uppercase text-lg break-words">name: user</p>
             </div>
             <button class="flex gap-x-2 justify-center items-center mt-10">
-                <img class="absolute hover:rotate-6" src="../../../images/Border.svg" alt="edit">
+                <img class="absolute" src="../../../images/Border.svg" alt="edit">
                 <img src="../../../images/Icon.svg" alt="edit">
                 <p class="text-white font-light text-2xl">Edit</p>
             </button>
         </div>
 
-        <div class="flex flex-col gap-y-5">
+        <div class="flex flex-col gap-y-5 itc-slider w-[65%] h-[70vh]"
+             data-slider="itc-slider"
+             data-loop="true"
+             data-autoplay="true"
+             data-interval="5000">
             <div class="flex flex-col gap-y-3 justify-between items-center">
                 <h2 class="text-white text-2xl font-bold">Любимые исполнители</h2>
                 <pagination-component />
             </div>
-            <div class="grid grid-cols-3 gap-5">
-                <card-component class="self-center" v-for="item in 6" />
+            <div class="itc-slider__wrapper">
+                <div class="itc-slider__items">
+                    <div class="itc-slider__item flex flex-col" v-for="item in 3">
+                        <div class="flex flex-wrap gap-5">
+                            <card-component class="self-center" v-for="item in 6" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

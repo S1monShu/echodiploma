@@ -12,7 +12,7 @@
                 </div>
                 <div class="flex flex-col">
                     <p class="text-center text-white capitalize text-xl break-words">song song song</p>
-                    <router-link to="/artist" class="flex justify-center">
+                    <router-link to="/artists/artist" class="flex justify-center">
                         <p class="text-center text-gray-500 uppercase text-md font-medium break-words">artist artist</p>
                     </router-link>
                 </div>

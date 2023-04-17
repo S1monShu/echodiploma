@@ -11,29 +11,49 @@
                 <p class="text-gray-500 uppercase text-lg break-words">name: user</p>
             </div>
             <button class="flex gap-x-2 justify-center items-center mt-10">
-                <img class="absolute hover:rotate-6" src="../../../images/Border.svg" alt="edit">
+                <img class="absolute" src="../../../images/Border.svg" alt="edit">
                 <img src="../../../images/Icon.svg" alt="edit">
                 <p class="text-white font-light text-2xl">Edit</p>
             </button>
         </div>
 
         <div class="flex flex-col w-[60%] gap-y-10 overflow-y-auto mt-[3%] pr-4">
-            <div class="flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5 itc-slider"
+                 data-slider="itc-slider"
+                 data-loop="true"
+                 data-autoplay="true"
+                 data-interval="5000">
                 <div class="flex flex-col justify-between items-center gap-y-2">
                     <h2 class="text-white text-3xl font-bold">Заявки на исполнителей</h2>
                     <pagination-component />
                 </div>
-                <div class="flex justify-start gap-x-5">
-                    <card-component v-for="item in 4" />
+                <div class="itc-slider__wrapper">
+                    <div class="itc-slider__items">
+                        <div class="itc-slider__item flex flex-col" v-for="item in 3">
+                            <div class="flex justify-start gap-x-5">
+                                <card-component v-for="item in 4" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5 itc-slider"
+                 data-slider="itc-slider"
+                 data-loop="true"
+                 data-autoplay="true"
+                 data-interval="5000">
                 <div class="flex flex-col justify-between items-center gap-y-2">
                     <h2 class="text-white text-3xl font-bold">Новые работы</h2>
                     <pagination-component />
                 </div>
-                <div class="flex justify-start gap-x-5">
-                    <card-component v-for="item in 4" />
+                <div class="itc-slider__wrapper">
+                    <div class="itc-slider__items">
+                        <div class="itc-slider__item flex flex-col" v-for="item in 3">
+                            <div class="flex justify-start gap-x-5">
+                                <card-component v-for="item in 4" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
