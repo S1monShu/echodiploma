@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col pt-10 gap-y-6 justify-center items-center">
 
-        <div class="flex w-[90%]">
+        <div class="flex w-[85%]">
             <div class="flex w-[25%]">
                 <img class="rounded-2xl" src="../../images/imageSong.svg" alt="image">
             </div>
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-y-8 itc-slider w-[90%]"
+        <div class="flex flex-col gap-y-8 itc-slider w-[85%]"
              data-slider="itc-slider"
              data-loop="true"
              data-autoplay="true"

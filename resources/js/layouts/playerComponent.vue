@@ -5,10 +5,10 @@
             <div class="flex justify-end">
                 <div class="flex justify-around w-[50%] mr-10 text-white text-2xl">
                     <button class="icon-previous"></button>
-                    <button @click="() => { this.activeSong = false }" v-if="this.activeSong" class="icon-pause w-[6.5%]"></button>
-                    <button @click="() => { this.activeSong = true }" v-else class="flex justify-center items-center"><img class="w-[80%] mb-[20%] ml-[30%]" src="../../images/Play.svg" alt="play_btn"></button>
+                    <button @click="this.$store.state.activeSong = false" v-if="this.$store.state.activeSong" class="icon-pause w-[6.5%]"></button>
+                    <button @click="this.$store.state.activeSong = true" v-else class="flex justify-center items-center"><img class="w-[80%] mb-[20%] ml-[30%]" src="../../images/Play.svg" alt="play_btn"></button>
                     <button class="icon-next"></button>
-                    <button @click.prevent="addFavourite" class="icon-favourite clickLike"></button>
+                    <button @click.prevent="this.$store.commit('addFavourite')" class="icon-favourite clickLike"></button>
                 </div>
                 <div class="flex flex-col">
                     <p class="text-center text-white capitalize text-xl break-words">song song song</p>
@@ -32,26 +32,5 @@
 <script>
 export default {
     name: "playerComponent",
-    data() {
-      return {
-          isFavourite: false,
-          activeSong: false
-      }
-    },
-    methods: {
-        // ADD_FAVOURITE
-        addFavourite () {
-            if (this.isFavourite) {
-                document.querySelector('.clickLike').style.color = 'white'
-                document.querySelector('.clickLike').style.transition = '.2s ease-in-out'
-                this.isFavourite = false
-            }
-            else {
-                document.querySelector('.clickLike').style.color = 'red'
-                document.querySelector('.clickLike').style.transition = '.2s ease-in-out'
-                this.isFavourite = true
-            }
-        }
-    }
 }
 </script>

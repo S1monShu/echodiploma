@@ -11,12 +11,14 @@
         @vite('resources/css/icon-fonts.css')
         @vite('resources/css/fonts.css')
         @vite('resources/css/scrollbar.css')
+        @vite('resources/css/notifications.css')
         @vite('resources/css/range-input.css')
     </head>
     <body>
     <div id="app"></div>
     @vite('resources/js/app.js')
     @vite('resources/js/scripts/slider.js')
+    @vite('resources/js/scripts/notifications.js')
     @vite('resources/js/scripts/range-input.js')
     </body>
 </html>

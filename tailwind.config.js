@@ -8,6 +8,8 @@ module.exports = {
         extend: {
             backgroundImage: {
                 'main-app': "url('/resources/images/Background.svg')",
+                'background-modal': "url('/resources/images/Background-modal.svg')",
+                'add-song': "url('/resources/images/Add_song_modal.svg')",
             }
         },
     },

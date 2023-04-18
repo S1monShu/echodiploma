@@ -10,9 +10,9 @@
                 <p class="text-gray-500 uppercase text-lg break-words">mail: user@mail.ru</p>
                 <p class="text-gray-500 uppercase text-lg break-words">name: user</p>
             </div>
-            <button class="flex gap-x-2 justify-center items-center mt-10">
-                <img class="absolute" src="../../../images/Border.svg" alt="edit">
-                <img src="../../../images/Add.svg" alt="edit">
+            <button @click="this.$store.state.showAddSongModal = true" class="flex gap-x-2 justify-center items-center mt-10">
+                <img class="absolute" src="../../../images/Border.svg" alt="border">
+                <img src="../../../images/Add.svg" alt="add">
                 <p class="text-white font-light text-2xl">Add</p>
             </button>
         </div>
@@ -58,16 +58,19 @@
             </div>
         </div>
 
+        <add-song-modal-page v-if="this.$store.state.showAddSongModal" @close="this.$store.state.showAddSongModal = false" />
+
     </div>
 </template>
 
 <script>
 import PaginationComponent from "@/components/paginationComponent.vue";
 import CardComponent from "@/components/cardComponent.vue";
+import addSongModalPage from "@/pages/modals/addSongModalPage.vue";
 
 export default {
     name: "profileArtistPage",
-    components: {PaginationComponent, CardComponent}
+    components: {PaginationComponent, CardComponent, addSongModalPage}
 }
 </script>
 
