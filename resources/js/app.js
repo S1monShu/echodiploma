@@ -9,6 +9,7 @@ import '../css/notifications.css'
 import '../css/fonts.css'
 import '../css/range-input.css'
 import '../css/scrollbar.css'
+import '../js/scripts/notifications'
 
 store.$router = router;
 createApp(App).use(router).use(store).mount("#app")
