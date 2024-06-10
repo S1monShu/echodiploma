@@ -55,15 +55,15 @@ const mutations = {
 
 const actions = {
     getSongs: async (context, payload) => {
-        let songs = await axios.get('http://89.111.175.236:80/api/songs')
+        let songs = await axios.get('http://89.111.175.236/api/songs')
         context.commit('setSongs', songs.data.songs)
     },
     getFavouriteSongs: async (context, payload) => {
-        let songs = await axios.get('http://89.111.175.236:80/api/songs/favorites')
+        let songs = await axios.get('http://89.111.175.236/api/songs/favorites')
         context.commit('setfavouriteSongs', songs.data.songs)
     },
     getApplicationsSongs: async (context, payload) => {
-        let applications = await axios.get('http://89.111.175.236:80/api/applications/songs', {
+        let applications = await axios.get('http://89.111.175.236/api/applications/songs', {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')
