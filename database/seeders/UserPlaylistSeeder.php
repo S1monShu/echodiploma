@@ -12,9 +12,9 @@ class UserPlaylistSeeder extends Seeder
      */
     public function run(): void
     {
-        UserPlaylist::factory()->create([
-            'user_id' => 3,
-            'playlist_id' => 1,
-        ]);
+        // UserPlaylist::factory()->create([
+        //     'user_id' => 3,
+        //     'playlist_id' => 1,
+        // ]);
     }
 }

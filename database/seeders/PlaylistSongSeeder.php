@@ -12,17 +12,17 @@ class PlaylistSongSeeder extends Seeder
      */
     public function run(): void
     {
-        PlaylistSong::factory()->create([
-            'playlist_id' => 1,
-            'song_id' => 1,
-        ]);
-        PlaylistSong::factory()->create([
-            'playlist_id' => 2,
-            'song_id' => 4,
-        ]);
-        PlaylistSong::factory()->create([
-            'playlist_id' => 1,
-            'song_id' => 3,
-        ]);
+        // PlaylistSong::factory()->create([
+        //     'playlist_id' => 1,
+        //     'song_id' => 1,
+        // ]);
+        // PlaylistSong::factory()->create([
+        //     'playlist_id' => 2,
+        //     'song_id' => 4,
+        // ]);
+        // PlaylistSong::factory()->create([
+        //     'playlist_id' => 1,
+        //     'song_id' => 3,
+        // ]);
     }
 }

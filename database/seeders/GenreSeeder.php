@@ -30,13 +30,6 @@ class GenreSeeder extends Seeder
             'image' => 'http://127.0.0.1:8000/storage/genres/ELECTRO.png'
         ]);
 
-        // GENRE!!! ID:3
-        Genre::factory()->create([
-            'title' => 'Танцевальная',
-            'popularity' => rand(0, 100),
-            'image' => 'http://127.0.0.1:8000/storage/genres/DANCE.png'
-        ]);
-
         // GENRE!!! ID:4
         Genre::factory()->create([
             'title' => 'Хип-хоп',
@@ -46,17 +39,16 @@ class GenreSeeder extends Seeder
 
         // GENRE!!! ID:5
         Genre::factory()->create([
-            'title' => 'Русский рок',
+            'title' => 'Рок',
             'popularity' => rand(0, 100),
             'image' => 'http://127.0.0.1:8000/storage/genres/ROCK.png'
         ]);
 
         // GENRE!!! ID:6
         Genre::factory()->create([
-            'title' => 'Легкая музыка',
+            'title' => 'Эмбиент',
             'popularity' => rand(0, 100),
             'image' => 'http://127.0.0.1:8000/storage/genres/LIGHT.png'
         ]);
-
     }
 }

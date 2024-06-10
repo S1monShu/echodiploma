@@ -12,13 +12,13 @@ class PlaylistSeeder extends Seeder
      */
     public function run(): void
     {
-        Playlist::factory()->create([
-            'title' => 'Первый',
-            'image' => 'img',
-        ]);
-        Playlist::factory()->create([
-            'title' => 'Второй',
-            'image' => 'img',
-        ]);
+        // Playlist::factory()->create([
+        //     'title' => 'Первый',
+        //     'image' => 'img',
+        // ]);
+        // Playlist::factory()->create([
+        //     'title' => 'Второй',
+        //     'image' => 'img',
+        // ]);
     }
 }
