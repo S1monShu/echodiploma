@@ -6,7 +6,6 @@ import profileUserPage from "@/pages/profiles/profileUserPage.vue";
 import profileAdminPage from "@/pages/profiles/profileAdminPage.vue";
 import profileArtistPage from "@/pages/profiles/profileArtistPage.vue";
 import songsArtistPage from "@/pages/songsArtistPage.vue";
-import notFoundPage from "@/pages/notFoundPage.vue";
 import topSongsPage from "@/pages/topSongsPage.vue";
 import genresPage from "@/pages/genresPage.vue";
 import artistsPage from "@/pages/popularArtists.vue";
@@ -35,7 +34,6 @@ const routes = [
     { path: '/profile_admin', component: profileAdminPage, meta: { requiresAuth: true } },
     { path: '/profile_artist', component: profileArtistPage, meta: { requiresAuth: true } },
     /**         404PAGE        **/
-    { path: '/:pathMatch(.*)*', component: notFoundPage }
 ]
 
 const router = createRouter({
