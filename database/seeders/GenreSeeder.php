@@ -16,46 +16,47 @@ class GenreSeeder extends Seeder
          * GENRES
          */
 
-        // GENRE!!!
+        // GENRE!!! ID:1
         Genre::factory()->create([
             'title' => 'Поп-музыка',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-user-playlist/27701/rd3n8snzrJUBlr/200x200?1654591853261'
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/POP.png'
         ]);
 
-        // GENRE!!!
+        // GENRE!!! ID:2
         Genre::factory()->create([
-            'title' => 'Рок',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-user-playlist/70586/553947738.1037.31367.ru/200x200?1542023831367'
+            'title' => 'Электроника',
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/ELECTRO.png'
         ]);
 
-        // GENRE!!!
+        // GENRE!!! ID:3
         Genre::factory()->create([
-            'title' => 'Электро',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-user-playlist/38125/603134215.1006.26105.ru/200x200?1538401726105'
+            'title' => 'Танцевальная',
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/DANCE.png'
         ]);
 
-        // GENRE!!!
+        // GENRE!!! ID:4
         Genre::factory()->create([
-            'title' => 'Легкая',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-user-playlist/28719/rtoaq6RlEnaTah/200x200?1682429263665'
+            'title' => 'Хип-хоп',
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/HIP-HOP.png'
         ]);
 
-        // GENRE!!!
+        // GENRE!!! ID:5
         Genre::factory()->create([
-            'title' => 'Постпанк',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-user-playlist/34120/553947738.1049.52138.ru/200x200?1540993252138'
+            'title' => 'Русский рок',
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/ROCK.png'
         ]);
 
-        // GENRE!!!
+        // GENRE!!! ID:6
         Genre::factory()->create([
-            'title' => 'Фонк',
-            'popularity' => 0,
-            'image' => 'https://avatars.yandex.net/get-music-content/9737237/a2f36a35.a.25758047-1/200x200'
+            'title' => 'Легкая музыка',
+            'popularity' => rand(0, 100),
+            'image' => 'http://127.0.0.1:8000/storage/genres/LIGHT.png'
         ]);
+
     }
 }

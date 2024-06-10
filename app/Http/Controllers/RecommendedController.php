@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SongResource;
 use App\Models\Song;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,7 @@ class RecommendedController extends Controller
         $recommendedSongs = Song::query()->whereIn('id', $similarSongIndices)->get();
 
         return response()->json([
-            'recommended_songs' => $recommendedSongs,
+            'recommended_songs' => SongResource::collection($recommendedSongs)
         ]);
     }
 

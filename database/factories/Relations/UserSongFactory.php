@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Relations;
 
+use App\Models\Relations\UserSong;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Relations\UserSong>
+ * @extends Factory<UserSong>
  */
 class UserSongFactory extends Factory
 {

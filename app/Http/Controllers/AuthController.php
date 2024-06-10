@@ -5,16 +5,30 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SignInRequest;
 use App\Http\Requests\SignUpRequest;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
-    public function signUp(SignUpRequest $request):JsonResponse
+    public function signUp(SignUpRequest $request): JsonResponse
     {
+        $image = $request['image'];
+        if (!$image) {
+            $image = null;
+        }
+        $image->storeAs(
+            '/public/users/avatars',
+            $image->getClientOriginalName()
+        );
+        $image = $image->getClientOriginalName();
+        $image = "http://[::1]:5173/storage/app/public/users/avatars/" . $image;
         $user = User::create([
             'name' => $request['name'],
+            'is_candidate' => false,
+            'image' => $image,
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
@@ -28,11 +42,11 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function signIn(SignInRequest $request):JsonResponse
+    public function signIn(SignInRequest $request): JsonResponse
     {
         if (!Auth::attempt($request->all())) {
             return response()->json([
-                "message" => "Неверные авторизационные данные!",
+                "message" => "Неверные данные!",
             ], 401);
         }
         $user = $request->user();
@@ -41,11 +55,13 @@ class AuthController extends Controller
         // RETURN RESPONSE!!!
         return response()->json([
             "message" => "Успешный вход!",
+            "role" => $user->role_id,
+            "is_candidate" => $user->is_candidate,
             "token" => $token
         ]);
     }
 
-    public function logOut():JsonResponse
+    public function logOut(): JsonResponse
     {
         Auth::user()->tokens()->delete();
 
@@ -55,11 +71,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function unauthorized():JsonResponse
+    public function unauthorized(): JsonResponse
     {
         // RETURN RESPONSE!!!
         return response()->json([
-            "message" => "У вас нет привелегий!"
+            "message" => "Вы не авторизованы!"
         ], 403);
     }
 }

@@ -50,8 +50,8 @@ input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-
 
 /*mozilla*/
 input[type=range].styled-slider::-moz-range-thumb {
-  width: 1.5em;
-  height: 1.5em;
+  width: 0.8em;
+  height: 0.8em;
   border-radius: 1em;
   background: red;
   border: none;
@@ -59,7 +59,7 @@ input[type=range].styled-slider::-moz-range-thumb {
 }
 
 input[type=range].styled-slider::-moz-range-track {
-  height: 0.8em;
+  height: 0.2em;
   border: none;
   border-radius: 0;
   background: #8B8B8B;

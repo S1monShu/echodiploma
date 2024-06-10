@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->boolean('is_application')->default(false);
-            $table->boolean('agree_application')->default(false);
+            $table->boolean('is_application');
+            $table->boolean('agree_application');
             /*
              * PERCENT OF POPULARITY
              * 0 - LOW POPULARITY
@@ -24,10 +24,7 @@ return new class extends Migration
              */
             $table->integer('popularity')->default(0);
             $table->string('song_url');
-            $table->string('image')->default(null);
-            $table->foreignId('artist_id')->nullable()->constrained();
-            $table->foreignId('genre_id');
-            $table->foreignId('playlist_id');
+            $table->string('image');
             $table->timestamps();
         });
     }

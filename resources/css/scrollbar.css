@@ -1,12 +1,18 @@
-div::-webkit-scrollbar {
-    width: 2px;               /* ширина всей полосы прокрутки */
+div::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+    width: 0;              /* ширина всей полосы прокрутки */
 }
 
-div::-webkit-scrollbar-track {
-    background: #9d9d9d;        /* цвет зоны отслеживания */
+div::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar {
+    width: 0;       /* округлось бегунка */
 }
 
-div::-webkit-scrollbar-thumb {
-    background-color: white;    /* цвет бегунка */
-    border-radius: 100%;       /* округлось бегунка */
+select::-webkit-scrollbar {
+    width: 0;              /* ширина всей полосы прокрутки */
+}
+
+select::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar {
+    width: 0;      /* округлось бегунка */
 }

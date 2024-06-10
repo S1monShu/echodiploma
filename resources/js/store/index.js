@@ -1,80 +1,21 @@
 import { createStore } from "vuex"
+import songs from "@/store/modules/songs"
+import genres from "@/store/modules/genres"
+import artists from "@/store/modules/artists"
+import auth from "@/store/modules/auth"
+import player from "@/store/modules/player";
+import playlists from "@/store/modules/playlists"
 
 const store = createStore({
-    state() {
-        return {
-            // EDIT_DATA_USER_ADMIN_FORM_STATES
-            editUser: false,
-            editAdmin: false,
-            // HEADER_STATES
-            upHere: false,
-            hasToken: localStorage.getItem('token'),
-            // SEARCH_INPUT
-            searchQuery: '',
-            // DATA_USER_FORMS
-            authUserData: {
-                email: '',
-                password: '',
-            },
-            registerUserData: {
-                name: '',
-                email: '',
-                password: '',
-                password_confirmation: '',
-            },
-            songArtistData: {
-                title: '',
-                file: null,
-                image: null
-            },
-            artistUserData: {
-                title: '',
-                email: '',
-                image: null
-            },
-            // STATES_OF_AXIOS_QUERIES
-            me: [],
-            users: [],
-            songs: [],
-            artists: [],
-            playlistOfGenres: [],
-            // STATES_MODALS
-            showAuthModal: false,
-            showRegisterModal: false,
-            showAddSongModal: false,
-            showAddArtistModal: false,
-            // PLAYER_STATES
-            isFavourite: false,
-            activeSong: false,
-        }
+    state: {
+        upHere: false,
+        showEditForm: false,
+        showAddSongToPlaylistModal: false,
+        showAddSongModal: false,
+        showAddPlaylistModal: false,
+        showEditPlaylistModal: false
     },
-    mutations: {
-        // ADD_FAVOURITE
-        addFavourite (state) {
-            if (state.isFavourite) {
-                document.querySelector('.clickLike').style.color = 'white'
-                document.querySelector('.clickLike').style.transition = '.2s ease-in-out'
-                state.isFavourite = false
-            }
-            else {
-                document.querySelector('.clickLike').style.color = 'red'
-                document.querySelector('.clickLike').style.transition = '.2s ease-in-out'
-                state.isFavourite = true
-            }
-        },
-        // HANDLE_AVATAR_ARTIST
-        handleArtist(state) {
-            let file = this.$refs.avatar.files[0];
-            state.artistUserData.image = URL.createObjectURL(file);
-        },
-        // HANDLE_AVATAR_SONG
-        handleSong(state) {
-            let avatarFile = this.$refs.avatar_song.files[0];
-            let songFile = this.$refs.song_file.files[0];
-            state.songArtistData.image = URL.createObjectURL(avatarFile);
-            state.songArtistData.file = URL.createObjectURL(songFile);
-        },
-    }
+    modules: { songs, artists, genres, auth, player, playlists }
 })
 
 export default store

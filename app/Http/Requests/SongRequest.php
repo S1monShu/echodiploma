@@ -24,8 +24,9 @@ class SongRequest extends FormRequest
     {
         return [
             'title' => 'string|required|max:255',
-            'song' => 'size:12000|required',
-            'image' => 'required|mimes:jpg,bmp,png,svg'
+            'song' => 'file|max:12000|required|mimes:m4a,mp4a,mpga,mp2,mp2a,mp3,m2a,m3a,oga,ogg,spx,opus',
+            'image' => 'required|file|mimes:jpg,bmp,png,svg',
+            'genre_id' => 'required'
         ];
     }
 }

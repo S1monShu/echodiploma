@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Gilroy';
     src: url('../fonts/Gilroy-Regular.eot');
     src: local('Gilroy Regular'), local('Gilroy-Regular'),
@@ -236,4 +236,29 @@
         url('../fonts/Gilroy-ThinItalic.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
+} */
+@font-face {
+    font-family: 'Cygre';
+    src: url(/resources/fonts/CYGRE-LIGHT.TTF);
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Cygre';
+    src: url(/resources/fonts/CYGRE-MEDIUM.TTF);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Cygre';
+    src: url(/resources/fonts/CYGRE-SEMIBOLD.TTF);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Cygre';
+    src: url(/resources/fonts/CYGRE-BLACK.TTF);
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Kontanter';
+    src: url(/resources/fonts/KONTANTER-BOLD.OTF);
+    font-weight: 600;
 }

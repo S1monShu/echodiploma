@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -19,8 +20,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'is_candidate',
+        'image',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -41,4 +45,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Роль пользователя
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    // Треки исполнителя
+    public function songs(): BelongsToMany
+    {
+        return $this->belongsToMany(Song::class, 'user_songs');
+    }
+
+    public function playlists(): BelongsToMany
+    {
+        return $this->belongsToMany(Playlist::class, 'user_playlists');
+    }
+
+    // Понравившиеся треки
+    public function favourites(): BelongsToMany
+    {
+        return $this->belongsToMany(Song::class, 'favourite_songs');
+    }
 }

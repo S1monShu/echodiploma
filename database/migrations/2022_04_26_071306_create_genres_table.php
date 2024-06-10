@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->double('popularity')->default(0);
             $table->string('image')->default(null);
-            $table->foreignId('song_id')->constrained();
             $table->timestamps();
         });
     }
