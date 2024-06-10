@@ -55,15 +55,15 @@ const mutations = {
 
 const actions = {
     getSongs: async (context, payload) => {
-        let songs = await axios.get('http://127.0.0.1:8000/api/songs')
+        let songs = await axios.get('http://89.111.175.236/api/songs')
         context.commit('setSongs', songs.data.songs)
     },
     getFavouriteSongs: async (context, payload) => {
-        let songs = await axios.get('http://127.0.0.1:8000/api/songs/favorites')
+        let songs = await axios.get('http://89.111.175.236/api/songs/favorites')
         context.commit('setfavouriteSongs', songs.data.songs)
     },
     getApplicationsSongs: async (context, payload) => {
-        let applications = await axios.get('http://127.0.0.1:8000/api/applications/songs', {
+        let applications = await axios.get('http://89.111.175.236/api/applications/songs', {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')
@@ -72,7 +72,7 @@ const actions = {
         context.commit('setApplicationsSongs', applications.data.songs)
     },
     getRejectSongs: async (context, payload) => {
-        let reject = await axios.get('http://127.0.0.1:8000/api/applications/reject', {
+        let reject = await axios.get('http://89.111.175.236/api/applications/reject', {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')

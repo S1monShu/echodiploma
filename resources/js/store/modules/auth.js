@@ -49,7 +49,7 @@ const mutations = {
 
 const actions = {
     authUser: async (context) => {
-        await axios.post('http://127.0.0.1:8000/api/signIn', {
+        await axios.post('http://89.111.175.236/api/signIn', {
             email: state.authUserData.email,
             password: state.authUserData.password
         }).then(response => {
@@ -81,7 +81,7 @@ const actions = {
             });
     },
     storeUser: async (context) => {
-        await axios.post('http://127.0.0.1:8000/api/signUp', {
+        await axios.post('http://89.111.175.236/api/signUp', {
             name: state.registerUserData.name,
             email: state.registerUserData.email,
             password: state.registerUserData.password,
@@ -111,7 +111,7 @@ const actions = {
         })
     },
     getUser: async (context) => {
-        await axios.get('http://127.0.0.1:8000/api/user/show', {
+        await axios.get('http://89.111.175.236/api/user/show', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('auth_token')}`
             }
@@ -128,7 +128,7 @@ const actions = {
             // })
     },
     setEditAuthUser: async (context, payload) => {
-        await axios.post('http://127.0.0.1:8000/api/user/edit', {
+        await axios.post('http://89.111.175.236/api/user/edit', {
             name: state.me.name,
             email: state.me.email,
             image: state.me.image,
@@ -146,7 +146,7 @@ const actions = {
         })
     },
     logOutUser: async (context) => {
-        await axios.get('http://127.0.0.1:8000/api/logOut', {
+        await axios.get('http://89.111.175.236/api/logOut', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('auth_token')}`
             }

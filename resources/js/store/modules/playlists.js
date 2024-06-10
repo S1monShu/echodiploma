@@ -33,15 +33,15 @@ const mutations = {
 
 const actions = {
     getPlaylist: async (context, payload) => {
-        let playlist = await axios.get(`http://127.0.0.1:8000/api/playlist/${payload}`)
+        let playlist = await axios.get(`http://89.111.175.236/api/playlist/${payload}`)
         context.commit('setPlaylist', playlist.data.playlist)
     },
     getPlaylists: async (context, payload) => {
-        let playlists = await axios.get('http://127.0.0.1:8000/api/playlists')
+        let playlists = await axios.get('http://89.111.175.236/api/playlists')
         context.commit('setPlaylists', playlists.data.playlists)
     },
     createPlaylist: async (context, payload) => {
-        await axios.post('http://127.0.0.1:8000/api/playlist/new', {
+        await axios.post('http://89.111.175.236/api/playlist/new', {
             title: state.playlistArtistData.title,
             image: state.playlistArtistData.image,
         },{
@@ -67,7 +67,7 @@ const actions = {
         })
     },
     editPlaylist: async(context, payload) => {
-        await axios.post(`http://127.0.0.1:8000/api/playlist/${payload}/edit`, {
+        await axios.post(`http://89.111.175.236/api/playlist/${payload}/edit`, {
             title: state.playlist.title,
             image: state.playlist.image,
         }, {
@@ -84,7 +84,7 @@ const actions = {
     },
     deleteSongFromPlaylist: async (context, { id_playlist, id_song }) => {
         console.log(id_playlist, id_song)
-        await axios.delete(`http://127.0.0.1:8000/api/playlist/${id_playlist}/${id_song}`, {
+        await axios.delete(`http://89.111.175.236/api/playlist/${id_playlist}/${id_song}`, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')
@@ -106,7 +106,7 @@ const actions = {
         })
     },
     addSongToPlaylist: async (context, { id_playlist, id_song }) => {
-        await axios.post(`http://127.0.0.1:8000/api/playlist/${id_playlist}/${id_song}`, {
+        await axios.post(`http://89.111.175.236/api/playlist/${id_playlist}/${id_song}`, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')
@@ -127,7 +127,7 @@ const actions = {
         })
     },
     deletePlaylist: async (context, payload) => {
-        await axios.delete(`http://127.0.0.1:8000/api/playlist/${payload}`, {
+        await axios.delete(`http://89.111.175.236/api/playlist/${payload}`, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 "Authorization": 'Bearer ' + localStorage.getItem('auth_token')

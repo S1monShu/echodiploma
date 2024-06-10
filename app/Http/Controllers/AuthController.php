@@ -24,7 +24,7 @@ class AuthController extends Controller
             $image->getClientOriginalName()
         );
         $image = $image->getClientOriginalName();
-        $image = "http://[::1]:5173/storage/app/public/users/avatars/" . $image;
+        $image = "http://89.111.175.236/storage/app/public/users/avatars/" . $image;
         $user = User::create([
             'name' => $request['name'],
             'is_candidate' => false,
